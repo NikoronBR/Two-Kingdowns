@@ -1,2 +1,2 @@
 # Jornada-de-Yor
- BEM VINDO AO README KARALHO
+ Bem Vindo
