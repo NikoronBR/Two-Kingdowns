@@ -9,6 +9,8 @@ enum {
 	ATACAR
 }
 
+#GustavoEsteveAqui
+
 var velocidade = Vector2.ZERO
 var state = ANDAR
 
