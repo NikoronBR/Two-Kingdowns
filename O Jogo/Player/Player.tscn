@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/PlayerSprite.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -99,14 +99,18 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 1.89281
+height = 5.92074
+
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 7.62939e-06, -0.132431 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -6.37835 )
+position = Vector2( 0.0883904, -6.52513 )
 texture = ExtResource( 1 )
 hframes = 24
-frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IdleDown = SubResource( 1 )
@@ -119,3 +123,8 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 11 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0883904, 0.195885 )
+rotation = 1.57079
+shape = SubResource( 12 )
