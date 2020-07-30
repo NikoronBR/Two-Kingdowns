@@ -9,7 +9,7 @@ height = 10.0281
 [node name="ArvoreP" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 14.0408, -25.1887 )
+position = Vector2( 14, -25 )
 scale = Vector2( 1.7, 1.7 )
 texture = ExtResource( 1 )
 
