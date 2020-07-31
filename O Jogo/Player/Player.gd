@@ -5,7 +5,7 @@ export var MAX_SPEED = 100
 export var ACCELERATION = 600
 export var FRICTION = 600
 
-#Ligando as ações do personagem a números.
+#Definindo constantes para as ações do personagem.
 enum {
 	MOVE,
 	ATTACK
@@ -19,14 +19,17 @@ var state = MOVE
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-#onready var hurtbox = $Hurtbox
+onready var swordHitobox = $SwordHitbox
 
+#Função para ativar elementos ao abrir o jogo.
 func _ready():
-	#Ativando a árvore de animação quando o jogo abrir.
+	#Ativar árvore de animação.
 	animationTree.active = true
+	#Ativar direção inicial para o knockback.
+	swordHitobox.knockback_vector = Vector2.LEFT
 
 func _physics_process(delta):
-	#Defininfo a animação e ações do personagem baseados nos inputs
+	#Definido a animação e ações do personagem baseados nos inputs
 	match state:
 		MOVE:
 			move_state(delta)
@@ -42,6 +45,7 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		swordHitobox.knockback_vector = input_vector
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		#animationTree.set("parameters/Run/blend_position", input_vector)
 		#animationTree.set("parameters/Attack/blend_position", input_vector)
@@ -54,7 +58,7 @@ func move_state(delta):
 		
 	move()
 	
-	#if Input.is_action_just_pressed("ataque"):
+	#if Input.is_action_just_pressed("atacar"):
 		#state = ATTACK
 
 #func attack_state():
@@ -64,10 +68,12 @@ func move_state(delta):
 func move():
 	velocity = move_and_slide(velocity)
 
-#func atacck_fim():
+#func atacck_end():
 	#state = MOVE
 
 #func _on_Hurtbox_area_entered(_area):
 	#stats.health -= 1
 	#hurtbox.start_invincibility(1.0)
 	#hurtbox.create_hit_effect()
+
+

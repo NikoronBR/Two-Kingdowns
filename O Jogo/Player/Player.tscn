@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/PlayerSprite.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Hurtboxes + Hitboxes/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/SwordHitbox.gd" type="Script" id=4]
+[ext_resource path="res://Hurtboxes + Hitboxes/Hitbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "IdleDown"
@@ -103,8 +106,13 @@ start_node = "Idle"
 radius = 1.89281
 height = 5.92074
 
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 3.81285
+height = 7.23161
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 7.62939e-06, -0.132431 )
+collision_layer = 2147483650
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -128,3 +136,18 @@ parameters/Idle/blend_position = Vector2( 0, 1 )
 position = Vector2( 0.00496298, 3.69983 )
 rotation = 1.57079
 shape = SubResource( 12 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0.148647, -1.56083 )
+shape = SubResource( 13 )
+
+[node name="SwordHitbox" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 4 )
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="mouse_entered" from="Hurtbox" to="." method="_on_Hurtbox_mouse_entered"]
+
+[editable path="Hurtbox"]
+
+[editable path="SwordHitbox"]
