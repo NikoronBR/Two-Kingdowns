@@ -108,7 +108,7 @@ position = Vector2( 7.62939e-06, -0.132431 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.0883904, -6.52513 )
+position = Vector2( 0.0883904, -2.35376 )
 texture = ExtResource( 1 )
 hframes = 24
 
@@ -125,6 +125,6 @@ parameters/playback = SubResource( 11 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0883904, 0.195885 )
+position = Vector2( 0.00496298, 3.69983 )
 rotation = 1.57079
 shape = SubResource( 12 )
