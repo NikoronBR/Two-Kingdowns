@@ -130,7 +130,7 @@ anims/IdleUp = SubResource( 4 )
 tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 11 )
-parameters/Idle/blend_position = Vector2( 0, 1 )
+parameters/Idle/blend_position = Vector2( -0.0171607, -0.132759 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.00496298, 3.69983 )
