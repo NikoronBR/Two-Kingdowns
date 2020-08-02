@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ArvoreP.png-bd341f0f572e65de7541e85524affa92.stex"
+path="res://.import/MiniBoss1.png-f736e72b996896009d89ed9c3e18a485.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/ArvoreP.png"
-dest_files=[ "res://.import/ArvoreP.png-bd341f0f572e65de7541e85524affa92.stex" ]
+source_file="res://Enemies/MiniBoss1.png"
+dest_files=[ "res://.import/MiniBoss1.png-f736e72b996896009d89ed9c3e18a485.stex" ]
 
 [params]
 

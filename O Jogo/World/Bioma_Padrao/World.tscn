@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/ArvoreM.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/ArvoreP.tscn" type="PackedScene" id=3]
-[ext_resource path="res://World/Tronco.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/TileVerde.png" type="Texture" id=9]
+[ext_resource path="res://World/Bioma_Padrao/ArvoreM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Bioma_Padrao/ArvoreP.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Bioma_Padrao/Tronco.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Bioma_MiniBoss1/StaticBody2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Bioma_Padrao/TileVerde.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Terra"
@@ -114,3 +115,6 @@ position = Vector2( 150.096, 111.676 )
 
 [node name="ArvoreM8" parent="YSort/Arvores" instance=ExtResource( 2 )]
 position = Vector2( 212.53, 79.5675 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 216.763, 154.472 )

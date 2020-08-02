@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ArvoreVermeP.png-ae3dc0371156bb0a8d111a03c969839c.stex"
+path="res://.import/ArvoreLaranM.png-342f7d55f390036a5bc4df2e00a8817a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/ArvoreVermeP.png"
-dest_files=[ "res://.import/ArvoreVermeP.png-ae3dc0371156bb0a8d111a03c969839c.stex" ]
+source_file="res://World/Bioma_Padrao/ArvoreLaranM.png"
+dest_files=[ "res://.import/ArvoreLaranM.png-342f7d55f390036a5bc4df2e00a8817a.stex" ]
 
 [params]
 

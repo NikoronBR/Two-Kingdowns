@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tronco.png-31826967e9403dead99fc2796671f4ee.stex"
+path="res://.import/ArvoreM.png-e14469e5b44d20c18d772a19866fa66f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Tronco.png"
-dest_files=[ "res://.import/Tronco.png-31826967e9403dead99fc2796671f4ee.stex" ]
+source_file="res://World/Bioma_Padrao/ArvoreM.png"
+dest_files=[ "res://.import/ArvoreM.png-e14469e5b44d20c18d772a19866fa66f.stex" ]
 
 [params]
 
