@@ -14,15 +14,17 @@ enum {
 #Definindo variáveis para velocidade e estado do personagem.
 var velocity = Vector2.ZERO
 var state = MOVE
+var stats = PlayerStats
 
 #Definindo variaveis para a animação.
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var swordHitobox = $SwordHitbox
+onready var swordHitobox = $HitboxPivot/SwordHitbox
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
+	stats.connect("no_health", self, "queue_free")
 	#Ativar árvore de animação.
 	animationTree.active = true
 	#Ativar direção inicial para o knockback.
@@ -34,8 +36,8 @@ func _physics_process(delta):
 		MOVE:
 			move_state(delta)
 		
-		#ATTACK:
-			#attack_state()
+		ATTACK:
+			attack_state()
 			
 func move_state(delta):
 	#Ligando inputs do teclado a direções que o jogador irá se movimentar. 
@@ -48,7 +50,7 @@ func move_state(delta):
 		swordHitobox.knockback_vector = input_vector
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		#animationTree.set("parameters/Run/blend_position", input_vector)
-		#animationTree.set("parameters/Attack/blend_position", input_vector)
+		animationTree.set("parameters/Attack/blend_position", input_vector)
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 		
@@ -58,22 +60,25 @@ func move_state(delta):
 		
 	move()
 	
-	#if Input.is_action_just_pressed("atacar"):
-		#state = ATTACK
+	#Ativar state ATTACK, quando pressionar botão para atacar.
+	if Input.is_action_just_pressed("atacar"):
+		state = ATTACK
 
-#func attack_state():
-	#velocity = Vector2.ZERO
-	#animationState.travel("Attack")
+#função para o player parar de se movimentar e puxar a animação de ataque.
+func attack_state():
+	velocity = Vector2.ZERO
+	animationState.travel("Attack")
 
 func move():
 	velocity = move_and_slide(velocity)
 
-#func atacck_end():
-	#state = MOVE
+# Aciona o state MOVE quando o ataque finaliza.
+func attack_end():
+	state = MOVE
 
-#func _on_Hurtbox_area_entered(_area):
-	#stats.health -= 1
-	#hurtbox.start_invincibility(1.0)
-	#hurtbox.create_hit_effect()
+# Diminui a vida quando detecta um ataque.
+func _on_Hurtbox_area_entered(_area):
+	stats.health -= 1
+	
 
 

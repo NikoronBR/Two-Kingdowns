@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/ArvoreM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Bioma_Padrao/ArvoreP.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Bioma_Padrao/Tronco.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Bioma_MiniBoss1/StaticBody2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/InimigoTeste.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Bioma_Padrao/TileVerde.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -64,42 +65,33 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 65537, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1,
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 14.1537, 152.503 )
 
+[node name="InimigoTeste" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 140.158, 116.798 )
+
 [node name="Tronco" type="YSort" parent="YSort"]
 
 [node name="Tronco3" parent="YSort/Tronco" instance=ExtResource( 4 )]
-position = Vector2( 124.765, 27.3328 )
+position = Vector2( 150.127, 56.0319 )
 
 [node name="Tronco2" parent="YSort/Tronco" instance=ExtResource( 4 )]
-position = Vector2( 24.4913, 79.1594 )
+position = Vector2( 16.1486, 106.857 )
 
 [node name="Tronco" parent="YSort/Tronco" instance=ExtResource( 4 )]
 position = Vector2( 88.7955, 34.7844 )
-
-[node name="Tronco4" parent="YSort/Tronco" instance=ExtResource( 4 )]
-position = Vector2( 118.559, 93.5182 )
-
-[node name="Tronco5" parent="YSort/Tronco" instance=ExtResource( 4 )]
-position = Vector2( 175.799, 75.6438 )
 
 [node name="Tronco6" parent="YSort/Tronco" instance=ExtResource( 4 )]
 position = Vector2( 220.947, 30.8158 )
 
 [node name="Arvores" type="YSort" parent="YSort"]
 
-[node name="ArvoreM" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 42.7703, 122.082 )
-
 [node name="ArvoreM2" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 66.5544, 65.297 )
+position = Vector2( 20.5024, 81.6488 )
 
 [node name="ArvoreM3" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 125.42, 66.1889 )
-
-[node name="ArvoreM4" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 90.6358, 107.514 )
+position = Vector2( 126.755, 30.8157 )
 
 [node name="ArvoreM5" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 175.07, 53.1077 )
+position = Vector2( 190.421, 31.4166 )
 
 [node name="ArvoreP" parent="YSort/Arvores" instance=ExtResource( 3 )]
 position = Vector2( 306.477, 40.9183 )
@@ -108,13 +100,13 @@ position = Vector2( 306.477, 40.9183 )
 position = Vector2( 304.99, 100.379 )
 
 [node name="ArvoreM6" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 254.449, 158.65 )
+position = Vector2( 250.444, 174.001 )
 
 [node name="ArvoreM7" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 150.096, 111.676 )
+position = Vector2( 53.3201, 52.2756 )
 
 [node name="ArvoreM8" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 212.53, 79.5675 )
+position = Vector2( 222.914, 84.6789 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 216.763, 154.472 )
+[node name="ÁrovoreMiniBoss" parent="YSort/Arvores" instance=ExtResource( 5 )]
+position = Vector2( 193.403, 81.3895 )
