@@ -12,7 +12,7 @@ func _physics_process(delta):
 # Quando detecta um Ataque diminui a vida e aplica a direção e velocidade do knockback
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 120
+	knockback = area.knockback_vector * 100
 	
 # Faz o inimigo desaparecer quando acaba a vida.
 func _on_Stats_no_health():
