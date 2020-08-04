@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fantasma.png-c439d2f402048cc7cca7cb489749b9ed.stex"
+path="res://.import/FantasmaDeLonge.png-5aab744b9d15d3ff0f30f9628bbd3ea2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Fantasma/Fantasma.png"
-dest_files=[ "res://.import/Fantasma.png-c439d2f402048cc7cca7cb489749b9ed.stex" ]
+source_file="res://Enemies/InimigosTestes/FantasmaDeLonge.png"
+dest_files=[ "res://.import/FantasmaDeLonge.png-5aab744b9d15d3ff0f30f9628bbd3ea2.stex" ]
 
 [params]
 

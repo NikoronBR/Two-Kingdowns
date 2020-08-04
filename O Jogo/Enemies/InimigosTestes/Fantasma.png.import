@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/VidaCheia.png-09915dc7407da03a5d92c71d1e3a86e9.stex"
+path="res://.import/Fantasma.png-8541ba1fc939d3d0ecbdf1ba21d6991c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/VidaCheia.png"
-dest_files=[ "res://.import/VidaCheia.png-09915dc7407da03a5d92c71d1e3a86e9.stex" ]
+source_file="res://Enemies/InimigosTestes/Fantasma.png"
+dest_files=[ "res://.import/Fantasma.png-8541ba1fc939d3d0ecbdf1ba21d6991c.stex" ]
 
 [params]
 

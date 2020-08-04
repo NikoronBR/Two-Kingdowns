@@ -366,7 +366,7 @@ radius = 1.89281
 height = 5.92074
 
 [sub_resource type="CapsuleShape2D" id=27]
-radius = 3.81285
+radius = 3.54947
 height = 7.23161
 
 [sub_resource type="CapsuleShape2D" id=28]
@@ -410,7 +410,6 @@ shape = SubResource( 26 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 4
-collision_mask = 32
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0.148647, -1.56083 )
@@ -429,7 +428,6 @@ script = ExtResource( 4 )
 shape = SubResource( 28 )
 disabled = true
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
-[connection signal="mouse_entered" from="Hurtbox" to="." method="_on_Hurtbox_mouse_entered"]
 
 [editable path="Hurtbox"]
 

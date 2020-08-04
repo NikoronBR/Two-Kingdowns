@@ -1,6 +1,10 @@
 extends Node2D
 
-func _on_Spell_shoot(Spell, _position, _direction):
-	var spell = Spell.instance()
-	add_child(spell)
-	spell.start(_position, _direction)
+#Função para criar projétil no mundo.
+func _on_Projectile_shoot(Projectile, _position, _direction):
+	var projectile = Projectile.instance()
+	add_child(projectile)
+	projectile.start(_position, _direction)
+
+
+
