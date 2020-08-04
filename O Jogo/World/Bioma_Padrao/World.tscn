@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/ArvoreM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Bioma_Padrao/ArvoreP.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Bioma_Padrao/Tronco.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Bioma_MiniBoss1/StaticBody2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Enemies/InimigoTeste.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Fantasma/InimigoTeste.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/MiniBoss.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
 [ext_resource path="res://World/Bioma_Padrao/TileVerde.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -54,6 +55,7 @@
 1/z_index = 0
 
 [node name="World" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -67,10 +69,10 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 65537, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1,
 position = Vector2( 64.6802, 105.356 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 14.1537, 152.503 )
+position = Vector2( 14.6834, 57.4162 )
 
 [node name="InimigoTeste" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 124.698, 98.9599 )
+position = Vector2( 174.465, 79.1161 )
 
 [node name="Tronco" type="YSort" parent="YSort"]
 
@@ -83,7 +85,8 @@ position = Vector2( 310.237, 84.7977 )
 position = Vector2( 292.975, 71.0743 )
 
 [node name="ArvoreM8" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 260.442, 70.4485 )
+position = Vector2( 261.766, 51.3782 )
 
 [node name="ÁrovoreMiniBoss" parent="YSort/Arvores" instance=ExtResource( 5 )]
 position = Vector2( 286.338, 133.408 )
+[connection signal="shoot" from="YSort/InimigoTeste" to="." method="_on_Spell_shoot"]

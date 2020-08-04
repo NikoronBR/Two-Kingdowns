@@ -1,23 +1,25 @@
 extends Node
 
-# Define varíavel de vida máxima e vida atual
-export(int) var max_health = 1
-onready var health = max_health setget set_health #setget para detectar mudanças na vida atual
+#falta adicionar comentários aqui, esqueci exatamente como
+# esse sistema funciona
 
-# Definir sinal para quando a vida acabar
+export(int) var max_health = 1 setget set_max_health
+var health = max_health setget set_health
+
 signal no_health
+signal health_changed(value)
+signal max_health_changed(value)
 
-# Função para pegar o valor do setget e emitir sinal quando a vida acabar
+func set_max_health(value):
+	max_health = value
+	self.health = min(health, max_health)
+	emit_signal("max_health_changed", max_health)
+
 func set_health(value):
 	health = value
+	emit_signal("health_changed", health)
 	if health <= 0:
 		emit_signal("no_health")
 
-# Explicação:
-
-# A diminuição de vida é feita no próprio script do inimigo com um "Hitbox_entered"
-#a mudança na vida é detectada pelo setget, que envia o valor para função set_health que então
-#manda o sinal "no_health" para ser utilizado no script do próprio inimigo.
-
-# Hitbox_entered > diminui vida > setget detecta > atualiza valor na função >
-#set_health emite sinal quando vida acaba > sinal "no_health" contém queue_free ou outro comando.
+func _ready():
+	self.health = max_health

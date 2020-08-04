@@ -375,15 +375,15 @@ height = 9.62867
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 7.62939e-06, -0.132431 )
-collision_layer = 2147483650
-collision_mask = 17
+collision_layer = 2
+collision_mask = 2147483649
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.0883904, -2.35376 )
 texture = ExtResource( 1 )
 hframes = 24
-frame = 23
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 1 )
@@ -409,7 +409,8 @@ rotation = 1.57079
 shape = SubResource( 26 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-visible = false
+collision_layer = 4
+collision_mask = 32
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0.148647, -1.56083 )
@@ -417,7 +418,7 @@ shape = SubResource( 27 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -1 )
-rotation = -1.5708
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
 position = Vector2( 12, 0 )
