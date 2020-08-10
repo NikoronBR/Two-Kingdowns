@@ -67,26 +67,8 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 65537, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1,
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="MiniBoss" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 43.8392, 104.696 )
-
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 35.543, 147.926 )
-
-[node name="InimigoDePerto" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 121.625, 44.3285 )
-
-[node name="InimigoDePerto2" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 161.777, 162.777 )
-
-[node name="InimigoDePerto3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 139.515, 97.3678 )
-
-[node name="InimigoDeLonge" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 234.577, 66.8704 )
-
-[node name="InimigoDeLonge2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 251.845, 145.519 )
 
 [node name="Tronco" type="YSort" parent="YSort"]
 
@@ -104,20 +86,26 @@ position = Vector2( 261.766, 51.3782 )
 [node name="ÁrovoreMiniBoss" parent="YSort/Arvores" instance=ExtResource( 5 )]
 position = Vector2( 286.338, 133.408 )
 
-[node name="Control" parent="YSort" instance=ExtResource( 10 )]
+[node name="InimigoDePerto" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 121.625, 44.3285 )
 
-[node name="HeartEmpty" parent="YSort/Control" index="0"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 85.0
-margin_bottom = 18.0
+[node name="InimigoDePerto2" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 161.777, 162.777 )
 
-[node name="HeartFull" parent="YSort/Control" index="1"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 85.0
-margin_bottom = 18.0
+[node name="InimigoDePerto3" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 139.515, 97.3678 )
+
+[node name="InimigoDeLonge" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 234.577, 66.8704 )
+
+[node name="InimigoDeLonge2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 251.845, 145.519 )
+
+[node name="MiniBoss" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 43.8392, 104.696 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource( 10 )]
 [connection signal="shoot" from="YSort/InimigoDeLonge" to="." method="_on_Projectile_shoot"]
 [connection signal="shoot" from="YSort/InimigoDeLonge2" to="." method="_on_Projectile_shoot"]
-
-[editable path="YSort/Control"]

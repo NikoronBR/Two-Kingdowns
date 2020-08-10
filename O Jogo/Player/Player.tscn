@@ -383,7 +383,7 @@ script = ExtResource( 2 )
 position = Vector2( 0.0883904, -2.35376 )
 texture = ExtResource( 1 )
 hframes = 24
-frame = 8
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/InimigosTestes/Fantasma.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Enemies/Detectar/PlayerDetectionZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDePerto.gd" type="Script" id=5]
 [ext_resource path="res://Hurtboxes + Hitboxes/Hitbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hurtboxes + Hitboxes/SoftColision.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -45,8 +46,12 @@ radius = 7.06139
 height = 11.8121
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 6.28693
-height = 6.50162
+radius = 5.96742
+height = 3.16304
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 3.07952
+height = 4.92767
 
 [node name="InimigoDePerto" type="KinematicBody2D"]
 collision_layer = 16
@@ -56,6 +61,7 @@ script = ExtResource( 5 )
 position = Vector2( 0, -7 )
 frames = SubResource( 5 )
 animation = "Andar"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -64,7 +70,6 @@ rotation = 1.5708
 shape = SubResource( 6 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-visible = false
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -75,18 +80,26 @@ shape = SubResource( 7 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0.393726, -7.1658 )
+position = Vector2( -0.0787395, -3.46478 )
 shape = SubResource( 8 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 1, 1, 1, 0.501961 )
 
 [node name="Stats" parent="." instance=ExtResource( 1 )]
 max_health = 2
+
+[node name="SoftColision" parent="." instance=ExtResource( 7 )]
+
+[node name="CollisionShape2D" parent="SoftColision" index="0"]
+position = Vector2( -0.315338, 1.89201 )
+rotation = 1.57079
+shape = SubResource( 9 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
 
 [editable path="Hitbox"]
+
+[editable path="SoftColision"]
