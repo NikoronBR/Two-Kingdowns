@@ -24,6 +24,7 @@ onready var swordHitobox = $HitboxPivot/SwordHitbox
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
+	randomize()
 	stats.connect("no_health", self, "queue_free")
 	#Ativar árvore de animação.
 	animationTree.active = true

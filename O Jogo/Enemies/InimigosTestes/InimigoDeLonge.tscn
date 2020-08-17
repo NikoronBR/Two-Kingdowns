@@ -51,7 +51,7 @@ script = ExtResource( 5 )
 position = Vector2( 0, -7 )
 frames = SubResource( 5 )
 animation = "Andar"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -68,6 +68,7 @@ rotation = 3.14159
 shape = SubResource( 7 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 2 )]
+visible = false
 modulate = Color( 1, 1, 1, 0.501961 )
 
 [node name="Stats" parent="." instance=ExtResource( 1 )]

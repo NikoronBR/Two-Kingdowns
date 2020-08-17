@@ -86,14 +86,11 @@ position = Vector2( 261.766, 51.3782 )
 [node name="ÁrovoreMiniBoss" parent="YSort/Arvores" instance=ExtResource( 5 )]
 position = Vector2( 286.338, 133.408 )
 
-[node name="InimigoDePerto" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 121.625, 44.3285 )
-
 [node name="InimigoDePerto2" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 161.777, 162.777 )
+position = Vector2( 173.129, 132.925 )
 
 [node name="InimigoDePerto3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 139.515, 97.3678 )
+position = Vector2( 139.515, 63.7319 )
 
 [node name="InimigoDeLonge" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 234.577, 66.8704 )
@@ -102,10 +99,14 @@ position = Vector2( 234.577, 66.8704 )
 position = Vector2( 251.845, 145.519 )
 
 [node name="MiniBoss" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 43.8392, 104.696 )
+position = Vector2( 45.0284, 108.858 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource( 10 )]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = -234.0
+margin_bottom = -159.0
 [connection signal="shoot" from="YSort/InimigoDeLonge" to="." method="_on_Projectile_shoot"]
 [connection signal="shoot" from="YSort/InimigoDeLonge2" to="." method="_on_Projectile_shoot"]
