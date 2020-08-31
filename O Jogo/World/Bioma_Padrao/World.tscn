@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Bioma_Padrao/ArvoreM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDeLonge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
 [ext_resource path="res://World/Bioma_Padrao/TileVerde.png" type="Texture" id=9]
@@ -81,4 +82,7 @@ margin_left = 3.10243
 margin_top = 3.0
 margin_right = -156.898
 margin_bottom = -141.0
+
+[node name="ArvoreM" parent="." instance=ExtResource( 2 )]
+position = Vector2( 140.635, 113.949 )
 [connection signal="shoot" from="YSort/InimigoDeLonge2" to="." method="_on_Projectile_shoot"]
