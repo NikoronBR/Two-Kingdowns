@@ -12,7 +12,7 @@ func set_hearts(value):
 	#o valor seja maior que zero e menor que o numero máximo de corações.
 	hearts = clamp(value, 0, max_hearts)
 	if heartFull != null:
-		heartFull.rect_size.x = hearts * 21
+		heartFull.rect_size.x = hearts * 16
 	
 #ativada quando o sinal de vida MÁXIMA do stats é enviado e recebido pelo setget
 func set_max_hearts(value):
@@ -20,7 +20,7 @@ func set_max_hearts(value):
 	max_hearts = max(value, 1)
 	self.hearts = min(hearts, max_hearts)
 	if heartEmpty != null:
-		heartEmpty.rect_size.x = max_hearts * 21
+		heartEmpty.rect_size.x = max_hearts * 16
 	
 #função para adequar a HUD com a Vida do jogador e conectar os sinais de ''Stats''. 
 func _ready():
