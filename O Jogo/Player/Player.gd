@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 #Configurando valores de velocidade máxima, aceleração e friccção do personagem.
-export var MAX_SPEED = 100
-export var ACCELERATION = 600
-export var FRICTION = 600
+export var MAX_SPEED = 82
+export var ACCELERATION = 582
+export var FRICTION = 582
 
 #Definindo constantes para as ações do personagem.
 enum {
@@ -40,6 +40,8 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state()
 			
+			
+			
 func move_state(delta):
 	#Ligando inputs do teclado a direções que o jogador irá se movimentar. 
 	var input_vector = Vector2.ZERO
@@ -50,9 +52,9 @@ func move_state(delta):
 	if input_vector != Vector2.ZERO:
 		swordHitobox.knockback_vector = input_vector
 		animationTree.set("parameters/Idle/blend_position", input_vector)
-		#animationTree.set("parameters/Run/blend_position", input_vector)
+		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
-		animationState.travel("Idle")
+		animationState.travel("Run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 		
 	else:
