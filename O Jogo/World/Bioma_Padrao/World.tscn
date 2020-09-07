@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/ArvoreM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Miniboss2new.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDeLonge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
 [ext_resource path="res://World/Bioma_Padrao/TileVerde.png" type="Texture" id=9]
@@ -66,6 +67,9 @@ position = Vector2( 0, -0.749161 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 13.1623, 52.9474 )
+
+[node name="Miniboss2new" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -59.0647, 91.9761 )
 
 [node name="Arvores" type="YSort" parent="YSort"]
 
