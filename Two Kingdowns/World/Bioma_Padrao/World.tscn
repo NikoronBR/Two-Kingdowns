@@ -74,13 +74,13 @@ position = Vector2( -59.0647, 91.9761 )
 [node name="Arvores" type="YSort" parent="YSort"]
 
 [node name="ArvoreM" parent="YSort/Arvores" instance=ExtResource( 2 )]
-position = Vector2( 140.635, 114.698 )
+position = Vector2( 21.0541, 129.749 )
 
 [node name="InimigoDePerto3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 117.569, 58.0936 )
+position = Vector2( 63.2233, 102.455 )
 
 [node name="InimigoDeLonge2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 45.8254, 121.133 )
+position = Vector2( 114.137, 35.2082 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

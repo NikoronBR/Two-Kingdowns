@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arvore.png-41843e2d09fa64907ca2e0a934ea37d6.stex"
+path="res://.import/ArvoreMiniBoss1.png-57d6c7efb720db3cba792896af3d48aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Bioma_MiniBoss1/arvore.png"
-dest_files=[ "res://.import/arvore.png-41843e2d09fa64907ca2e0a934ea37d6.stex" ]
+source_file="res://World/Bioma_MiniBoss1/ArvoreMiniBoss1.png"
+dest_files=[ "res://.import/ArvoreMiniBoss1.png-57d6c7efb720db3cba792896af3d48aa.stex" ]
 
 [params]
 

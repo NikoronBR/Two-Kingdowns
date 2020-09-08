@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://World/Bioma_MiniBoss1/arvore.png" type="Texture" id=1]
+[ext_resource path="res://World/Bioma_MiniBoss1/ArvoreMiniBoss1.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.28162

@@ -2,7 +2,6 @@
 
 [ext_resource path="res://World/Bioma_Padrao/ArvoreLaranM.png" type="Texture" id=1]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.91479
 height = 13.0827
