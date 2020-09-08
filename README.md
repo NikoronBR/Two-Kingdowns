@@ -1,4 +1,4 @@
-# Jornada-de-Yor
+# Two Kingdowns
 
 Bem Vindo ao nosso jogo, na pasta "Jogo" esta o diretório que usaremos.
 
