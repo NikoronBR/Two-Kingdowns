@@ -83,5 +83,3 @@ func attack_end():
 func _on_Hurtbox_area_entered(_area):
 	stats.health -= 1
 	
-
-

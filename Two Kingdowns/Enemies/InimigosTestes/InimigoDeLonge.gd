@@ -13,6 +13,7 @@ onready var hurtbox = $Hurtbox
 
 signal shoot
 
+
 func _physics_process(delta):
 # Cria uma fricção para o inimigo resistir ao knockback
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)

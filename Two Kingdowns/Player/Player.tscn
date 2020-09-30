@@ -544,7 +544,7 @@ script = ExtResource( 2 )
 position = Vector2( 0.902371, -10.9748 )
 texture = ExtResource( 1 )
 hframes = 44
-frame = 1
+frame = 36
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.8
@@ -570,16 +570,15 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0.22073, 0.532332 )
 rotation = 1.57079
 shape = SubResource( 39 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = false
 position = Vector2( 0.371628, -4.75683 )
 shape = SubResource( 40 )
 
