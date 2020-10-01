@@ -21,11 +21,14 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitobox = $HitboxPivot/SwordHitbox
+onready var hurtbox = $Hurtbox
+
+signal player_morto(global_position)
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
 	randomize()
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health", self, "player_death")
 	#Ativar árvore de animação.
 	animationTree.active = true
 	#Ativar direção inicial para o knockback.
@@ -82,4 +85,9 @@ func attack_end():
 # Diminui a vida quando detecta um ataque.
 func _on_Hurtbox_area_entered(_area):
 	stats.health -= 1
+	hurtbox.start_invincibility(0.7)
+	hurtbox.create_hit_effect()
 	
+func player_death():
+	emit_signal("player_morto", global_position)
+	queue_free()
