@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Camera/Camera2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Casa.tscn" type="PackedScene" id=4]
+
+[node name="Início" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Casa" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 74.25, 79.75 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 79.8097, 97.2704 )
+
+[node name="Camera" parent="YSort" instance=ExtResource( 1 )]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 2 )]
