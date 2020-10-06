@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/Grama.tscn" type="PackedScene" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDePerto.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 216 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 97.9608, 10 )
 
 [node name="Inicio" type="Node2D"]
 script = ExtResource( 8 )
@@ -42,5 +48,23 @@ position = Vector2( 32.0605, 348.881 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource( 10 )]
+
+[node name="ParedeInvisivel" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeInvisivel"]
+position = Vector2( -8, 216 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParedeInvisivel"]
+position = Vector2( 168, 216 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedeInvisivel"]
+position = Vector2( 80, 7 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedeInvisivel"]
+position = Vector2( 78.0392, 440 )
+shape = SubResource( 2 )
 [connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
 [connection signal="shoot" from="YSort/Inimigos/InimigoDeLonge3" to="." method="_on_Projectile_shoot"]
