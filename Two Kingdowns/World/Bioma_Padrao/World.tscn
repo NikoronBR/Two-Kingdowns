@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/Grama.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Camera/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Casa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Itens/chave.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDeLonge.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/porta_trancada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDePerto.tscn" type="PackedScene" id=11]
@@ -44,6 +46,12 @@ position = Vector2( 126.062, 367.796 )
 position = Vector2( 32.0605, 348.881 )
 
 [node name="Arvores" type="YSort" parent="YSort"]
+
+[node name="chave" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 120, 112.749 )
+
+[node name="porta" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 88, 88.7492 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

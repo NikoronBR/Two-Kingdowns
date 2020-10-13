@@ -16,6 +16,9 @@ var velocity = Vector2.ZERO
 var state = MOVE
 var stats = PlayerStats
 
+#Define variável para a quantidade de chaves que o jogador possui.
+var chaves = 0
+
 #Definindo variaveis para a animação.
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -42,9 +45,10 @@ func _physics_process(delta):
 		
 		ATTACK:
 			attack_state()
-			
-			
-			
+	
+	#Variável que garante que o jogador não tenha mais do que o limite de chaves
+	chaves = min(chaves,9)
+
 func move_state(delta):
 	#Ligando inputs do teclado a direções que o jogador irá se movimentar. 
 	var input_vector = Vector2.ZERO
