@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/Grama.tscn" type="PackedScene" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDeLonge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/porta_trancada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Bioma_Padrao/World.gd" type="Script" id=8]
+[ext_resource path="res://Itens/espada.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDePerto.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 216 )
@@ -53,9 +55,14 @@ position = Vector2( 120, 112.749 )
 [node name="porta" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 88, 88.7492 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="espada" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 40, 104.749 )
 
-[node name="Hud" parent="CanvasLayer" instance=ExtResource( 10 )]
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Hud" parent="HUD" instance=ExtResource( 10 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ParedeInvisivel" type="StaticBody2D" parent="."]
 
@@ -68,7 +75,7 @@ position = Vector2( 168, 216 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedeInvisivel"]
-position = Vector2( 80, 7 )
+position = Vector2( 80, 8 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedeInvisivel"]

@@ -19,6 +19,9 @@ var stats = PlayerStats
 #Define variável para a quantidade de chaves que o jogador possui.
 var chaves = 0
 
+#Define variável para quando player pegar a espada:
+var espada = false
+
 #Definindo variaveis para a animação.
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -71,7 +74,7 @@ func move_state(delta):
 	move()
 	
 	#Ativar state ATTACK, quando pressionar botão para atacar.
-	if Input.is_action_just_pressed("atacar"):
+	if Input.is_action_just_pressed("atacar") and espada:
 		state = ATTACK
 
 #função para o player parar de se movimentar e puxar a animação de ataque.
