@@ -95,6 +95,7 @@ func _on_Hurtbox_area_entered(_area):
 	hurtbox.start_invincibility(0.7)
 	hurtbox.create_hit_effect()
 	
+# Emite um sinal com a posição do player antes de morrer
 func player_death():
 	emit_signal("player_morto", global_position)
 	queue_free()

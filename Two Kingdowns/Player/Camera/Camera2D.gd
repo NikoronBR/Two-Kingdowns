@@ -15,18 +15,8 @@ func get_grid_pos(pos):
 	var y = floor(pos.y / SCREEN_SIZE.y)
 	return Vector2(x,y)
 
-
-
-"""const SCREEN_SIZE = Vector2(160,128)
-
-func _process(delta):
-	var pos = get_node("../Player").global_position - Vector2(0,16)
-	global_position = lerp(global_position, pos * SCREEN_SIZE, 0.08)
-	var x = floor(pos.x / 160) * 160
-	var y = floor(pos.y / 144) * 144
-	global_position = Vector2(x,y)
-
+# Faz com que a câmera fique na posição de morte do player
 func _on_Player_player_morto(global_position):
 	global_position = global_position
 	set_process(false)
-"""
+
