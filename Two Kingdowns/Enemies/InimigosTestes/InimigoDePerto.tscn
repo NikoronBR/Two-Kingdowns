@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/InimigosTestes/Fantasma.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Enemies/InimigosTestes/InimigoDePerto.gd" type="Script" id=5]
 [ext_resource path="res://Hurtboxes + Hitboxes/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Hurtboxes + Hitboxes/SoftColision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -97,8 +96,6 @@ max_health = 2
 position = Vector2( -0.315338, 1.89201 )
 rotation = 1.57079
 shape = SubResource( 9 )
-
-[node name="WanderController" parent="." instance=ExtResource( 8 )]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
