@@ -50,13 +50,13 @@ position = Vector2( 32.0605, 348.881 )
 [node name="Arvores" type="YSort" parent="YSort"]
 
 [node name="chave" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 120, 112.749 )
+position = Vector2( 24, 104.749 )
 
 [node name="espada" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 40, 104.749 )
+position = Vector2( 32.7943, 168.749 )
 
 [node name="porta" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 88, 88.7492 )
+position = Vector2( 88, 81.7587 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
@@ -77,7 +77,7 @@ position = Vector2( 80, 8 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedeInvisivel"]
-position = Vector2( 78.0392, 406 )
+position = Vector2( 78.0392, 441 )
 shape = SubResource( 2 )
 [connection signal="player_morto" from="YSort/Player" to="HUD" method="_on_Player_player_morto"]
 [connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
