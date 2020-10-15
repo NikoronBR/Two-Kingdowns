@@ -8,5 +8,4 @@ func body_entered(body):
 	#Se o jogador encostar em uma chave e não tiver o máximo, irá pegá-la
 	if body.name == "Player" and body.get("chaves") < 9:
 		body.chaves += 1
-		emit_signal("nova_chave", body.chaves)
 		queue_free()

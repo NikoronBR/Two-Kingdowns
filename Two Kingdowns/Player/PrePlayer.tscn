@@ -10,13 +10,14 @@ height = 5.70761
 collision_layer = 2
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.589291, -13.1546 )
 texture = ExtResource( 1 )
 hframes = 8
-frame = 5
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.07937, 11.733 )
-rotation = 1.5708
+position = Vector2( 0.0286956, -0.0676746 )
+rotation = 1.57079
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

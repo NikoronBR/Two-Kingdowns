@@ -11,7 +11,6 @@ extents = Vector2( 7.56329, 7.24223 )
 
 [node name="porta" type="StaticBody2D"]
 position = Vector2( 0, 9.53674e-07 )
-collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -22,6 +21,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="area" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
 shape = SubResource( 2 )

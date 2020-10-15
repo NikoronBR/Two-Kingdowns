@@ -8,11 +8,11 @@
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 136, 136 )
+position = Vector2( 133.324, 132.284 )
 texture = ExtResource( 2 )
 
 [node name="qtdchaves" type="Sprite" parent="."]
-position = Vector2( 152, 136 )
+position = Vector2( 149.176, 131.986 )
 scale = Vector2( 1.83333, 1.83333 )
 texture = ExtResource( 1 )
 hframes = 10

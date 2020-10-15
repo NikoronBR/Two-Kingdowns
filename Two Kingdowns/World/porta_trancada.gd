@@ -7,3 +7,6 @@ func body_entered(body):
 	if body.name == "Player" and body.chaves > 0:
 		body.chaves -= 1
 		queue_free()
+
+
+
