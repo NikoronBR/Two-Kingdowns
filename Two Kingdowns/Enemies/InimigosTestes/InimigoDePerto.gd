@@ -11,7 +11,7 @@ enum {
 	CHASE,
 }
 
-var state = CHASE
+var state = IDLE
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
@@ -21,9 +21,8 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftColision
 
-
 func _ready():
-	state = IDLE
+	set_physics_process(false)
 
 func _physics_process(delta):
 # Cria uma fricção para o inimigo resistir ao knockback

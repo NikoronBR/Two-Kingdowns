@@ -20,3 +20,8 @@ func _on_Player_player_morto(global_position):
 	global_position = global_position
 	set_process(false)
 
+func _on_Area2D_body_entered(body):
+	body.set_physics_process(true)
+
+func _on_Area2D_body_exited(body):
+	body.set_physics_process(false)

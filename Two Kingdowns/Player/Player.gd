@@ -33,7 +33,6 @@ signal player_morto(global_position)
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
-	randomize()
 	stats.connect("no_health", self, "player_death")
 	#Ativar árvore de animação.
 	animationTree.active = true
