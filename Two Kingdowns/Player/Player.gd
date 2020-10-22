@@ -24,7 +24,7 @@ var espada = false
 
 #Definindo variaveis para a animação.
 onready var animationPlayer = $AnimationPlayer
-onready var animationTree = $AnimationTree
+onready var animationTree = $PreAnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitobox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $Hurtbox
@@ -98,3 +98,11 @@ func _on_Hurtbox_area_entered(_area):
 func player_death():
 	emit_signal("player_morto", global_position)
 	queue_free()
+
+func _on_espada_pegar_armor():
+	animationTree.active = false
+	animationTree = $AnimationTree
+	animationState = animationTree.get("parameters/playback")
+	animationTree.active = true
+	get_node("PreSprite").hide()
+	get_node("Sprite").show()
