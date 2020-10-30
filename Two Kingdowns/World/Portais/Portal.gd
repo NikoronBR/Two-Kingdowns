@@ -1,11 +1,10 @@
 extends Area2D
 
+
 func _ready():
 	#Conecta o sinal do corpo sendo entrado com a função body_entered
 	connect("body_entered",self,"body_entered")
-	
-func body_entered(body):
-	#Se o jogador encostar em uma espada irá pegá-la.
-	PlayerStats.espada = true
-	queue_free()
 
+
+func body_entered(body):
+	get_tree().change_scene("res://World/Bioma_Padrao/Fase2.tscn")

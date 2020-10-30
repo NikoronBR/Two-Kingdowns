@@ -16,12 +16,6 @@ var velocity = Vector2.ZERO
 var state = MOVE
 var stats = PlayerStats
 
-#Define variável para a quantidade de chaves que o jogador possui.
-var chaves = 0
-
-#Define variável para quando player pegar a espada:
-var espada = false
-
 #Definindo variaveis para a animação.
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $PreAnimationTree
@@ -33,6 +27,8 @@ signal player_morto(global_position)
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
+	if stats.armor == true:
+		_on_ArmorPickUp_pegar_armor()
 	stats.connect("no_health", self, "player_death")
 	#Ativar árvore de animação.
 	animationTree.active = true
@@ -49,7 +45,7 @@ func _physics_process(delta):
 			attack_state()
 	
 	#Variável que garante que o jogador não tenha mais do que o limite de chaves
-	chaves = min(chaves,9)
+	#chaves = min(chaves,9)
 
 func move_state(delta):
 	#Ligando inputs do teclado a direções que o jogador irá se movimentar. 
@@ -73,7 +69,7 @@ func move_state(delta):
 	move()
 	
 	#Ativar state ATTACK, quando pressionar botão para atacar.
-	if Input.is_action_just_pressed("atacar") and espada:
+	if Input.is_action_just_pressed("atacar") and stats.espada:
 		state = ATTACK
 
 #função para o player parar de se movimentar e puxar a animação de ataque.
@@ -98,11 +94,14 @@ func _on_Hurtbox_area_entered(_area):
 func player_death():
 	emit_signal("player_morto", global_position)
 	queue_free()
+		
 
-func _on_espada_pegar_armor():
+func _on_ArmorPickUp_pegar_armor():
 	animationTree.active = false
 	animationTree = $AnimationTree
 	animationState = animationTree.get("parameters/playback")
 	animationTree.active = true
 	get_node("PreSprite").hide()
 	get_node("Sprite").show()
+	
+

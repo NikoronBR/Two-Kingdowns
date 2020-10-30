@@ -4,6 +4,15 @@ extends Node
 export(int) var max_health = 1 setget set_max_health
 var health = max_health setget set_health
 
+#Define variável para quando player pegar a espada:
+var espada = false
+
+#Define variável para a quantidade de chaves que o jogador possui.
+var chaves = 0
+
+#Define variável para possuir armadura
+var armor = false 
+
 signal no_health
 signal health_changed(value)
 signal max_health_changed(value)
