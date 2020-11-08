@@ -7,4 +7,4 @@ func _ready():
 
 
 func body_entered(body):
-	get_tree().change_scene("res://World/Bioma_Padrao/Fase2.tscn")
+	get_tree().change_scene("res://World/Dungeon1/FaseDungeon1.tscn")

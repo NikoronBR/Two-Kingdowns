@@ -11,7 +11,7 @@ height = 18.6525
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1.68027, -34.7363 )
 texture = ExtResource( 1 )
-hframes = 12
+hframes = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.561859, -7.67882 )
