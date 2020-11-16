@@ -22,7 +22,7 @@ extents = Vector2( 10, 216 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 97.9608, 10 )
 
-[node name="Inicio" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="Grama" parent="." instance=ExtResource( 2 )]
@@ -48,7 +48,7 @@ position = Vector2( 81.1117, 81.7587 )
 [node name="Inimigos" type="YSort" parent="YSort"]
 
 [node name="InimigoDeLonge3" parent="YSort/Inimigos" instance=ExtResource( 6 )]
-position = Vector2( 126.062, 367.796 )
+position = Vector2( 125.2, 396.045 )
 
 [node name="InimigoDePerto5" parent="YSort/Inimigos" instance=ExtResource( 11 )]
 position = Vector2( 32.0605, 348.881 )

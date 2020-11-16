@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 #Configurando valores de velocidade máxima, aceleração e friccção do personagem.
-export var MAX_SPEED = 82
-export var ACCELERATION = 582
-export var FRICTION = 582
+export var MAX_SPEED = 80
+export var ACCELERATION = 580
+export var FRICTION = 580
 
 #Definindo constantes para as ações do personagem.
 enum {

@@ -1,0 +1,210 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Enemies/miniboss2.1.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Miniboss2Alt.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/Detectar/PlayerDetectionZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/AttackDetectionZone.gd" type="Script" id=5]
+[ext_resource path="res://Hurtboxes + Hitboxes/Hurtbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hurtboxes + Hitboxes/Hitbox.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 14.8553
+height = 12.6809
+
+[sub_resource type="Animation" id=2]
+resource_name = "Attack"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Chase"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Defect"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Attack"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Chase"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Defect"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=14]
+"states/Attack 2/node" = SubResource( 5 )
+"states/Attack 2/position" = Vector2( 416, 64 )
+states/Chase/node = SubResource( 6 )
+states/Chase/position = Vector2( 247, 64 )
+states/Defect/node = SubResource( 7 )
+states/Defect/position = Vector2( 324, 181 )
+transitions = [ "Chase", "Attack 2", SubResource( 8 ), "Attack 2", "Chase", SubResource( 9 ), "Attack 2", "Defect", SubResource( 10 ), "Chase", "Defect", SubResource( 11 ), "Defect", "Chase", SubResource( 12 ), "Defect", "Attack 2", SubResource( 13 ) ]
+start_node = "Chase"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 22.5191
+height = 25.4274
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 25.4054
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 72.4257
+
+[node name="PsychoBombALT" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.21, -12.4876 )
+texture = ExtResource( 1 )
+hframes = 14
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0.891571, -5.51973 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 2 )
+anims/Chase = SubResource( 3 )
+anims/Defect = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 15 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0.198433, -7.34173 )
+rotation = 3.14159
+shape = SubResource( 19 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 6 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0.561859, -19.1034 )
+shape = SubResource( 17 )
+
+[node name="AttackDetectionZone" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0.106735, -14.3876 )
+rotation = 1.57079
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectionZone"]
+position = Vector2( 4, 0 )
+rotation = -1.57079
+shape = SubResource( 18 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+visible = false
+
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 3
+
+[node name="CooldownTime" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="AttackDetectionZone" to="AttackDetectionZone" method="_on_AttackDetectionZone_body_entered"]
+[connection signal="body_exited" from="AttackDetectionZone" to="AttackDetectionZone" method="_on_AttackDetectionZone_body_exited"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hitbox"]
+
+[editable path="Hurtbox"]
+
+[editable path="PlayerDetectionZone"]

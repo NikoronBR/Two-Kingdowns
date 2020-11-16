@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var FantasmaDeathEffect = preload("res://Effects/FantasmaDeathEffect.tscn")
 
-export var ACCELERATION = 385
+export var ACCELERATION = 380
 export var MAX_SPEED = 50
-export var FRICTION = 185
+export var FRICTION = 180
 
 enum {
 	IDLE,
