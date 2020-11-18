@@ -104,3 +104,5 @@ func _on_ArmorPickUp_pegar_armor():
 	get_node("PreSprite").hide()
 	get_node("Sprite").show()
 	
+	
+	

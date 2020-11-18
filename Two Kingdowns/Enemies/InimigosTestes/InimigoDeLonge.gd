@@ -32,3 +32,14 @@ func _physics_process(delta):
 			#Sinal com varíaveis enviadas para o node "World"
 			emit_signal('shoot', Spell, position_, direction_)
 			Cooldown.start()
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= area.damage
+	knockback = area.knockback_vector * 170
+	hurtbox.create_hit_effect()
+	
+func _on_Stats_no_health():
+	queue_free()
+	var fantasmaDeathEffect = FantasmaDeathEffect.instance()
+	get_parent().add_child(fantasmaDeathEffect)
+	fantasmaDeathEffect.global_position = global_position

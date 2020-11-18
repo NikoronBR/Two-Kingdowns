@@ -11,4 +11,4 @@ func body_entered(body):
 		get_tree().change_scene("res://World/Dungeon1/FaseDungeon1.tscn")
 	if get_tree().current_scene.name == "FaseDungeon1":
 		get_tree().change_scene("res://World/Dungeon1/PsychoBomb/DungeonBoss.tscn")
-	
+
