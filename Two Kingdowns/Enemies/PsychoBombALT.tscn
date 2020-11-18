@@ -146,6 +146,7 @@ radius = 72.4257
 
 [node name="PsychoBombALT" type="KinematicBody2D"]
 script = ExtResource( 2 )
+MAX_SPEED = 48
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2.21, -12.4876 )
@@ -172,7 +173,7 @@ parameters/playback = SubResource( 15 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0.198433, -7.34173 )
+position = Vector2( 0.561859, -10.3876 )
 rotation = 3.14159
 shape = SubResource( 16 )
 

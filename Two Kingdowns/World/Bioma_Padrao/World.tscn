@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bioma_Padrao/Grama.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Itens/Armorpickup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/Portais/Portal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/Dungeon1/Dungeon1Tiles.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enemies/InimigosTestes/TiroParede.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 216 )
@@ -93,7 +94,11 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedeInvisivel"]
 position = Vector2( 78.0392, 441 )
 shape = SubResource( 2 )
+
+[node name="TiroParede" parent="." instance=ExtResource( 16 )]
+position = Vector2( 8, 240 )
 [connection signal="player_morto" from="YSort/Player" to="HUD" method="_on_Player_player_morto"]
 [connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
 [connection signal="shoot" from="YSort/Inimigos/InimigoDeLonge3" to="." method="_on_Projectile_shoot"]
 [connection signal="pegar_armor" from="YSort/Itens/ArmorPickUp" to="YSort/Player" method="_on_ArmorPickUp_pegar_armor"]
+[connection signal="shoot" from="TiroParede" to="." method="_on_Projectile_shoot"]
