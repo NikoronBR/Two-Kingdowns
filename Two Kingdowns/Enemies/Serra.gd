@@ -5,7 +5,7 @@ extends KinematicBody2D
 onready var path_follow = get_parent()
 
 #Define a velocidade da serra.
-var velocidade = 150
+export var velocidade = 150
 
 func _physics_process(delta):
 	MovementLoop(delta)
@@ -14,4 +14,3 @@ func _physics_process(delta):
 func MovementLoop(delta):
 	path_follow.set_offset(path_follow.get_offset() + velocidade * delta)
 	var pos = path_follow.get_global_position()
-	
