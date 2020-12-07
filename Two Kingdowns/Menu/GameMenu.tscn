@@ -128,7 +128,7 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 11 )]
-[connection signal="pressed" from="CartaMenu/VBoxContainer/NovoJogo" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_NovoJogo_pressed"]
 [connection signal="pressed" from="CartaMenu/VBoxContainer/NovoJogo" to="." method="_on_NovoJogo_pressed"]
-[connection signal="pressed" from="CartaMenu/VBoxContainer/Sair" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_Sair_pressed"]
+[connection signal="pressed" from="CartaMenu/VBoxContainer/NovoJogo" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_NovoJogo_pressed"]
 [connection signal="pressed" from="CartaMenu/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="pressed" from="CartaMenu/VBoxContainer/Sair" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_Sair_pressed"]

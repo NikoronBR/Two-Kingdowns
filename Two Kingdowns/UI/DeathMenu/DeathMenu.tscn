@@ -46,5 +46,5 @@ margin_bottom = 29.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Aperte \"espaço\" 
+text = "Aperte qualquer botão
 para tentar novamente."

@@ -100,7 +100,7 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedeInvisivel"]
 position = Vector2( 78.0392, 441 )
 shape = SubResource( 2 )
-[connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
-[connection signal="player_morto" from="YSort/Player" to="HUD" method="_on_Player_player_morto"]
 [connection signal="player_morto" from="YSort/Player" to="HUD/DeathMenu" method="_on_Player_player_morto"]
+[connection signal="player_morto" from="YSort/Player" to="HUD" method="_on_Player_player_morto"]
+[connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
 [connection signal="pegar_armor" from="YSort/Itens/ArmorPickUp" to="YSort/Player" method="_on_ArmorPickUp_pegar_armor"]
