@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Menu/Fonte/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Menu/menubackgroud.png" type="Texture" id=2]
+[ext_resource path="res://UI/DeathMenu/DeathMenu.gd" type="Script" id=3]
+
+[node name="DeathMenu" type="Control"]
+anchor_left = 0.094
+anchor_top = 0.625
+anchor_right = 1.1
+anchor_bottom = 1.625
+margin_left = -0.04
+margin_top = 7.62939e-06
+margin_right = -1.0
+margin_bottom = -1.52588e-05
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CartaMenu" type="NinePatchRect" parent="."]
+anchor_right = 0.85
+anchor_bottom = 0.264
+margin_bottom = 1.984
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 0.85
+anchor_bottom = 0.278
+margin_bottom = -0.0320053
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 136.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_left = 11.0
+margin_top = 4.0
+margin_right = 125.0
+margin_bottom = 29.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aperte \"espaço\" 
+para tentar novamente."

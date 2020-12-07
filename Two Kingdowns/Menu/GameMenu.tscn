@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World/Bioma_Padrao/Grama.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Casa.tscn" type="PackedScene" id=2]
@@ -9,17 +9,35 @@
 [ext_resource path="res://Menu/Botoes/Opcoes.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Botoes/Sair.png" type="Texture" id=8]
 [ext_resource path="res://Menu/Botoes/Creditos.png" type="Texture" id=9]
-[ext_resource path="res://Menu/Menu.gd" type="Script" id=10]
+[ext_resource path="res://Menu/SceneTransitionRect.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Menu/GameMenu.gd" type="Script" id=12]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureButton
+
+func _ready():
+	pass
+
+
+func _on_NovoJogo_pressed():
+	get_tree().change_scene(\"res://World/Bioma_Padrao/World.tscn\")
+
+
+func _on_Sair_pressed():
+	get_tree().quit()
+	pass
+"
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 65536, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 65537, 65545, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 131072, 131079, 1, 2, 131080, 1, 3, 131081, 1, 3, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 2, 196615, 0, 65536, 196616, 1, 65539, 196617, 1, 65539, 262144, 1, 0, 262145, 1, 2, 262146, 1, 3, 262147, 1, 4, 262148, 1, 0, 262149, 1, 2, 262150, 0, 65536, 262151, 1, 65539, 262152, 1, 65539, 262153, 0, 1, 327680, 1, 0, 327681, 1, 65538, 327682, 1, 65539, 327683, 0, 65537, 327684, 1, 3, 327685, 0, 65536, 327686, 1, 65539, 327687, 1, 65539, 327688, 0, 1, 327689, 1, 131076, 393216, 1, 65537, 393217, 1, 65538, 393218, 1, 65539, 393219, 1, 65539, 393220, 1, 65539, 393221, 1, 65539, 393222, 1, 65539, 393223, 0, 1, 393224, 1, 131076, 393225, 1, 0, 458752, 1, 0, 458753, 1, 131074, 458754, 0, 0, 458755, 1, 65539, 458756, 1, 65539, 458757, 0, 1, 458758, 1, 131075, 458759, 1, 131076, 458760, 1, 131073, 458761, 1, 0, 524288, 1, 0, 524289, 1, 131073, 524290, 1, 131074, 524291, 0, 0, 524292, 1, 65539, 524293, 1, 65540, 524294, 1, 65537, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 65536, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 65537, 65545, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 131072, 131079, 1, 2, 131080, 1, 3, 131081, 1, 3, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 2, 196615, 0, 65536, 196616, 1, 65539, 196617, 1, 65539, 262144, 1, 0, 262145, 0, 0, 262146, 0, 1, 262147, 0, 2, 262148, 1, 0, 262149, 1, 2, 262150, 0, 65536, 262151, 1, 65539, 262152, 1, 65539, 262153, 0, 1, 327680, 1, 0, 327681, 0, 65536, 327682, 0, 65537, 327683, 0, 65540, 327684, 0, 1, 327685, 0, 2, 327686, 1, 65539, 327687, 1, 65539, 327688, 0, 1, 327689, 1, 131076, 393216, 1, 65537, 393217, 0, 65536, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65537, 393221, 0, 65538, 393222, 1, 65539, 393223, 0, 1, 393224, 1, 131076, 393225, 1, 0, 458752, 1, 0, 458753, 0, 131072, 458754, 0, 3, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65538, 458758, 1, 131075, 458759, 1, 131076, 458760, 1, 131073, 458761, 1, 0, 524288, 1, 0, 524289, 1, 131073, 524290, 0, 131072, 524291, 0, 3, 524292, 0, 65537, 524293, 0, 65538, 524294, 1, 65537, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 589827, 0, 131072, 589828, 0, 131073, 589829, 0, 131074 )
 
 [node name="Casa" parent="." instance=ExtResource( 2 )]
 position = Vector2( 30.4467, 73.4041 )
@@ -71,7 +89,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 4 )
 expand = true
-script = ExtResource( 10 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -108,5 +126,9 @@ size_flags_horizontal = 4
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 4 )
 expand = true
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource( 11 )]
 [connection signal="pressed" from="CartaMenu/VBoxContainer/NovoJogo" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_NovoJogo_pressed"]
+[connection signal="pressed" from="CartaMenu/VBoxContainer/NovoJogo" to="." method="_on_NovoJogo_pressed"]
 [connection signal="pressed" from="CartaMenu/VBoxContainer/Sair" to="CartaMenu/VBoxContainer/NovoJogo" method="_on_Sair_pressed"]
+[connection signal="pressed" from="CartaMenu/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]

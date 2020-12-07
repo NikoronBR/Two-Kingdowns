@@ -4,6 +4,7 @@ extends KinematicBody2D
 export var ACCELERATION = 300
 export var MAX_SPEED = 30
 export var FRICTION = 180
+#Variaveis do tempo de perseguição e tempo de cooldown
 export var CHASE_TIME = 15
 export var DEFECT_TIME = 8
 
@@ -65,6 +66,7 @@ func update_state(time, new_state):
 func _on_Stats_no_health():
 	queue_free()
 
+#Checa se o boss esta no cooldown, se sim da dano e aumenta a velocidade dele.
 func _on_Hurtbox_area_entered(area):
 	if state == DEFECT:
 		stats.health -= area.damage
