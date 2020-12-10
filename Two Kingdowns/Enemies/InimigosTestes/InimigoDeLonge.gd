@@ -14,6 +14,7 @@ onready var hurtbox = $Hurtbox
 signal shoot
 
 func _ready():
+	connect("shoot", get_tree().get_current_scene(), "_on_Projectile_shoot")
 	set_physics_process(false)
 
 func _physics_process(delta):

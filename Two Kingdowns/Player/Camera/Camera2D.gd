@@ -16,7 +16,7 @@ func get_grid_pos(pos):
 	return Vector2(x,y)
 
 # Faz com que a câmera fique na posição de morte do player.
-func _on_Player_player_morto(global_position):
+func on_player_morto(global_position):
 	global_position = global_position
 	set_process(false)
 

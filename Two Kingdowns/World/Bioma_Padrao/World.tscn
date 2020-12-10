@@ -33,7 +33,6 @@ position = Vector2( 0, -0.749161 )
 position = Vector2( 78.0392, 120.371 )
 
 [node name="Camera" parent="YSort" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 0, 0.749161 )
 current = true
 

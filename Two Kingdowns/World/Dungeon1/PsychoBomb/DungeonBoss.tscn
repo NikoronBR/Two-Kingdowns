@@ -45,12 +45,12 @@ autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource( 1 )]
 
-[node name="DeathMenu" parent="HUD" instance=ExtResource( 10 )]
-
 [node name="HealthUI" parent="HUD" instance=ExtResource( 3 )]
 margin_top = -0.471939
 margin_bottom = -0.471939
 
 [node name="SceneTransitionRect" parent="HUD" instance=ExtResource( 8 )]
+
+[node name="DeathMenu" parent="HUD" instance=ExtResource( 10 )]
 
 [editable path="BossCamera"]

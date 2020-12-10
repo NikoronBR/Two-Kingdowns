@@ -27,9 +27,11 @@ signal player_morto(global_position)
 
 #Função para ativar elementos ao abrir o jogo.
 func _ready():
+	stats.connect("no_health", self, "player_death")
+	connect("player_morto", get_tree().get_current_scene(), "on_player_morto")
+	connect("player_morto", get_parent().get_node("Camera"), "on_player_morto")
 	if stats.armor == true:
 		_on_ArmorPickUp_pegar_armor()
-	stats.connect("no_health", self, "player_death")
 	#Ativar árvore de animação.
 	animationTree.active = true
 	#Ativar direção inicial para o knockback.

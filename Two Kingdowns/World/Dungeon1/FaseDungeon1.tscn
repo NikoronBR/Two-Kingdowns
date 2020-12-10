@@ -52,8 +52,7 @@ tile_data = PoolIntArray( -1, 3, 0, -65536, 3, 1, -65535, 3, 1, -65534, 3, 1, -6
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 75.9607, 64.695 )
-rotation = 0.00338844
+position = Vector2( 78.1287, 66.9911 )
 
 [node name="Camera" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 7.62939e-06, -0.132431 )
@@ -83,7 +82,7 @@ position = Vector2( -88.2416, 214.042 )
 position = Vector2( 1096.39, 134.576 )
 
 [node name="porta" parent="YSort/Objetos" instance=ExtResource( 12 )]
-position = Vector2( 567.973, 328.325 )
+position = Vector2( 569.602, 325.941 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -217,13 +216,4 @@ rotation = -1.5708
 [node name="Serra2" parent="Path2D9/PathFollow2D4" instance=ExtResource( 9 )]
 rotation = -3.14159
 script = ExtResource( 10 )
-[connection signal="player_morto" from="YSort/Player" to="YSort/Camera" method="_on_Player_player_morto"]
 [connection signal="player_morto" from="YSort/Player" to="HUD/DeathMenu" method="_on_Player_player_morto"]
-[connection signal="shoot" from="TiroParede" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede3" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede5" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede7" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede8" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede2" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede4" to="." method="_on_Projectile_shoot"]
-[connection signal="shoot" from="TiroParede6" to="." method="_on_Projectile_shoot"]
